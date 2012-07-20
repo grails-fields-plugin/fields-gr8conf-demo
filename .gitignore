@@ -1,0 +1,17 @@
+# IntelliJ project files
+/.idea
+*.iws
+*.ipr
+*.iml
+/out/
+
+# Log files
+*.log
+
+# Build time files
+/target/
+/web-app/plugins
+/web-app/WEB-INF/classes
+
+# OSX
+.DS_Store
