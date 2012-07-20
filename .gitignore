@@ -15,3 +15,6 @@
 
 # OSX
 .DS_Store
+
+# H2 database
+/*.db
