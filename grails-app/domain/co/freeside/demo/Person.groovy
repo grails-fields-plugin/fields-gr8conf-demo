@@ -2,6 +2,7 @@ package co.freeside.demo
 
 class Person {
 
+	Salutation salutation
 	String firstName
 	String lastName
 	Gender gender
@@ -10,6 +11,7 @@ class Person {
 	Address address
 
     static constraints = {
+    	salutation nullable: true
     	firstName blank: false
     	lastName blank: false
     	gender nullable: true
