@@ -223,7 +223,7 @@ fieldset,
 	margin-top: 1em;
 }
 
-.fieldcontain label,
+.fieldcontain label:first-child,
 .fieldcontain .property-label {
 	color: #666666;
 	text-align: right;
