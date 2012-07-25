@@ -41,15 +41,10 @@
 					<tr class="\${(i % 2) == 0 ? 'even' : 'odd'}">
 					<%  props.eachWithIndex { p, i ->
 							if (i == 0) { %>
-						<td><g:link action="show" id="\${${propertyName}.id}">\${fieldValue(bean: ${propertyName}, field: "${p.name}")}</g:link></td>
-					<%      } else if (i < 6) {
-								if (p.type == Boolean || p.type == boolean) { %>
-						<td><g:formatBoolean boolean="\${${propertyName}.${p.name}}" /></td>
-					<%          } else if (p.type == Date || p.type == java.sql.Date || p.type == java.sql.Time || p.type == Calendar) { %>
-						<td><g:formatDate date="\${${propertyName}.${p.name}}" /></td>
-					<%          } else { %>
-						<td>\${fieldValue(bean: ${propertyName}, field: "${p.name}")}</td>
-					<%  }   }   } %>
+						<f:display bean="\${${propertyName}}" property="${p.name}"><g:link action="show" id="\${${propertyName}.id}">\${value}</g:link></f:display>
+					<%      } else if (i < 6) { %>
+						<f:display bean="\${${propertyName}}" property="${p.name}"/>
+					<%  }   } %>
 					</tr>
 				</g:each>
 				</tbody>

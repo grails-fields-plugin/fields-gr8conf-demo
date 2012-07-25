@@ -27,14 +27,7 @@
 				props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) }
 				Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
 				props.each { p -> %>
-				<g:if test="\${${propertyName}?.${p.name}}">
-				<li class="fieldcontain">
-					<span id="${p.name}-label" class="property-label"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></span>
-					<span class="property-value" aria-labelledby="${p.name}-label">
-						<f:display bean="${propertyName}" property="${p.name}"/>
-					</span>
-				</li>
-				</g:if>
+					<f:display bean="${propertyName}" property="${p.name}"/>
 			<%  } %>
 			</ol>
 			<g:form>
