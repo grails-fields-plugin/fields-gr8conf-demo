@@ -1,12 +1,15 @@
 package co.freeside.demo
 
+import org.joda.time.*
+import org.jadira.usertype.dateandtime.joda.*
+
 class Person {
 
 	Salutation salutation
 	String firstName
 	String lastName
 	Gender gender
-	Date birthDate
+	LocalDate birthDate
 	String email
 	Address address
 
@@ -21,4 +24,8 @@ class Person {
     }
 
     static embedded = ['address']
+
+    static mapping = {
+    	birthDate type: PersistentLocalDate
+    }
 }

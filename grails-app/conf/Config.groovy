@@ -78,3 +78,5 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+jodatime.format.html5 = true

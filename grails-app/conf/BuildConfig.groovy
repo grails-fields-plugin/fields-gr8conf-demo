@@ -24,12 +24,14 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
+        compile 'org.jadira.usertype:usertype.jodatime:1.9'
     }
 
     plugins {
         build ":tomcat:$grailsVersion"
 
         compile ':cache:1.0.0'
+        compile ':joda-time:1.4'
 
         runtime ':database-migration:1.1'
         runtime ':fields:1.3-SNAPSHOT'
