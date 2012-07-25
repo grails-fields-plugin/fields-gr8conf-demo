@@ -34,17 +34,17 @@
 					<%      } else { %>
 						<g:sortableColumn property="${p.name}" title="\${message(code: '${domainClass.propertyName}.${p.name}.label', default: '${p.naturalName}')}" />
 					<%  }   }   } %>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
 					<tr class="\${(i % 2) == 0 ? 'even' : 'odd'}">
 					<%  props.eachWithIndex { p, i ->
-							if (i == 0) { %>
-						<f:display bean="\${${propertyName}}" property="${p.name}"><g:link action="show" id="\${${propertyName}.id}">\${value}</g:link></f:display>
-					<%      } else if (i < 6) { %>
+							if (i < 6) { %>
 						<f:display bean="\${${propertyName}}" property="${p.name}"/>
 					<%  }   } %>
+						<td><g:link action="show" id="\${${propertyName}.id}"><g:message code="default.view.label" default="View &raquo;"/></g:link></td>
 					</tr>
 				</g:each>
 				</tbody>
