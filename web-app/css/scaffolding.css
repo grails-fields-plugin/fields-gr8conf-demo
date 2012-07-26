@@ -54,23 +54,24 @@ table thead th {
 
 table th.asc a:after,
 table th.desc a:after {
-	content: '';
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
 	display: inline-block;
+	text-decoration: inherit;
 	width: 14px;
 	height: 14px;
 	margin-left: 0.3em;
 	vertical-align: text-top;
-	background-image: url(../plugins/twitter-bootstrap-2.0.2.25/img/glyphicons-halflings.png);
-	background-position: 14px 14px;
-	background-repeat: no-repeat;
+	text-decoration: none;
 }
 
 table th.asc a:after {
-	background-position: -289px -96px;
+	content: "\f0d8";
 }
 
 table th.desc a:after {
-	background-position: -312px -96px;
+	content: "\f0d7";
 }
 
 /* optimized display for small devices */
