@@ -3,48 +3,77 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="bootstrap">
 		<g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#show-person" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="show-person" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<ol class="property-list person">
+		<div class="row-fluid">
 			
-					<f:display bean="personInstance" property="salutation"/>
+			<div class="span3">
+				<div class="well">
+					<ul class="nav nav-list">
+						<li class="nav-header">${entityName}</li>
+						<li>
+							<g:link class="list" action="list">
+								<i class="icon-list"></i>
+								<g:message code="default.list.label" args="[entityName]" />
+							</g:link>
+						</li>
+						<li>
+							<g:link class="create" action="create">
+								<i class="icon-plus"></i>
+								<g:message code="default.create.label" args="[entityName]" />
+							</g:link>
+						</li>
+					</ul>
+				</div>
+			</div>
 			
-					<f:display bean="personInstance" property="firstName"/>
-			
-					<f:display bean="personInstance" property="lastName"/>
-			
-					<f:display bean="personInstance" property="gender"/>
-			
-					<f:display bean="personInstance" property="birthDate"/>
-			
-					<f:display bean="personInstance" property="email"/>
-			
-					<f:display bean="personInstance" property="address"/>
-			
-			</ol>
-			<g:form>
-				<fieldset class="buttons">
+			<div class="span9">
+
+				<div class="page-header">
+					<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+				</div>
+
+				<g:if test="${flash.message}">
+				<bootstrap:alert class="alert-info">${flash.message}</bootstrap:alert>
+				</g:if>
+
+				<dl class="dl-horizontal">
+				
+						<f:display bean="personInstance" property="salutation"/>
+				
+						<f:display bean="personInstance" property="firstName"/>
+				
+						<f:display bean="personInstance" property="lastName"/>
+				
+						<f:display bean="personInstance" property="gender"/>
+				
+						<f:display bean="personInstance" property="birthDate"/>
+				
+						<f:display bean="personInstance" property="email"/>
+				
+						<f:display bean="personInstance" property="address"/>
+				
+				</dl>
+
+				<g:form>
 					<g:hiddenField name="id" value="${personInstance?.id}" />
-					<g:link class="edit" action="edit" id="${personInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
+					<div class="form-actions">
+						<g:link class="btn" action="edit" id="${personInstance?.id}">
+							<i class="icon-pencil"></i>
+							<g:message code="default.button.edit.label" default="Edit" />
+						</g:link>
+						<button class="btn btn-danger" type="submit" name="_action_delete">
+							<i class="icon-trash icon-white"></i>
+							<g:message code="default.button.delete.label" default="Delete" />
+						</button>
+					</div>
+				</g:form>
+
+			</div>
+
 		</div>
 	</body>
 </html>
