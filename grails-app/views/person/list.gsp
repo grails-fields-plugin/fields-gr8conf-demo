@@ -43,17 +43,17 @@
 				<g:each in="${personInstanceList}" status="i" var="personInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td>${fieldValue(bean: personInstance, field: "salutation")}</td>
+						<f:display bean="${personInstance}" property="salutation"/>
 					
-						<td>${fieldValue(bean: personInstance, field: "firstName")}</td>
+						<f:display bean="${personInstance}" property="firstName"/>
 					
-						<td>${fieldValue(bean: personInstance, field: "lastName")}</td>
+						<f:display bean="${personInstance}" property="lastName"/>
 					
-						<td>${fieldValue(bean: personInstance, field: "gender")}</td>
+						<f:display bean="${personInstance}" property="gender"/>
 					
-						<td><g:formatDate date="${personInstance.birthDate}" /></td>
+						<f:display bean="${personInstance}" property="birthDate"/>
 					
-						<td>${fieldValue(bean: personInstance, field: "email")}</td>
+						<f:display bean="${personInstance}" property="email"/>
 					
 						<td><g:link action="show" id="${personInstance.id}"><g:message code="default.view.label" default="View &raquo;"/></g:link></td>
 					</tr>
