@@ -26,63 +26,63 @@
 				<g:if test="${personInstance?.salutation}">
 				<li class="fieldcontain">
 					<span id="salutation-label" class="property-label"><g:message code="person.salutation.label" default="Salutation" /></span>
-					
-						<span class="property-value" aria-labelledby="salutation-label"><g:fieldValue bean="${personInstance}" field="salutation"/></span>
-					
+					<span class="property-value" aria-labelledby="salutation-label">
+						<f:display bean="personInstance" property="salutation"/>
+					</span>
 				</li>
 				</g:if>
 			
 				<g:if test="${personInstance?.firstName}">
 				<li class="fieldcontain">
 					<span id="firstName-label" class="property-label"><g:message code="person.firstName.label" default="First Name" /></span>
-					
-						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${personInstance}" field="firstName"/></span>
-					
+					<span class="property-value" aria-labelledby="firstName-label">
+						<f:display bean="personInstance" property="firstName"/>
+					</span>
 				</li>
 				</g:if>
 			
 				<g:if test="${personInstance?.lastName}">
 				<li class="fieldcontain">
 					<span id="lastName-label" class="property-label"><g:message code="person.lastName.label" default="Last Name" /></span>
-					
-						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${personInstance}" field="lastName"/></span>
-					
+					<span class="property-value" aria-labelledby="lastName-label">
+						<f:display bean="personInstance" property="lastName"/>
+					</span>
 				</li>
 				</g:if>
 			
 				<g:if test="${personInstance?.gender}">
 				<li class="fieldcontain">
 					<span id="gender-label" class="property-label"><g:message code="person.gender.label" default="Gender" /></span>
-					
-						<span class="property-value" aria-labelledby="gender-label"><g:fieldValue bean="${personInstance}" field="gender"/></span>
-					
+					<span class="property-value" aria-labelledby="gender-label">
+						<f:display bean="personInstance" property="gender"/>
+					</span>
 				</li>
 				</g:if>
 			
 				<g:if test="${personInstance?.birthDate}">
 				<li class="fieldcontain">
 					<span id="birthDate-label" class="property-label"><g:message code="person.birthDate.label" default="Birth Date" /></span>
-					
-						<span class="property-value" aria-labelledby="birthDate-label"><g:formatDate date="${personInstance?.birthDate}" /></span>
-					
+					<span class="property-value" aria-labelledby="birthDate-label">
+						<f:display bean="personInstance" property="birthDate"/>
+					</span>
 				</li>
 				</g:if>
 			
 				<g:if test="${personInstance?.email}">
 				<li class="fieldcontain">
 					<span id="email-label" class="property-label"><g:message code="person.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${personInstance}" field="email"/></span>
-					
+					<span class="property-value" aria-labelledby="email-label">
+						<f:display bean="personInstance" property="email"/>
+					</span>
 				</li>
 				</g:if>
 			
 				<g:if test="${personInstance?.address}">
 				<li class="fieldcontain">
 					<span id="address-label" class="property-label"><g:message code="person.address.label" default="Address" /></span>
-					
-						<span class="property-value" aria-labelledby="address-label"><g:fieldValue bean="${personInstance}" field="address"/></span>
-					
+					<span class="property-value" aria-labelledby="address-label">
+						<f:display bean="personInstance" property="address"/>
+					</span>
 				</li>
 				</g:if>
 			
